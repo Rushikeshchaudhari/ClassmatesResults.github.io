@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./style.css">
+    <title>Result</title>
+    <style>
+
+    </style>
+</head>
+
+<body>
+    <div class="container my-5">
+        <table class="table table-bordered" id="table">
+            <thead>
+                <tr>
+                    <td colspan="2">Result</td>
+                </tr>
+            </thead>
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">First</th>
+                    <th scope="col">Last</th>
+                    <th scope="col">Handle</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="row">1</th>
+                    <td>Mark</td>
+                    <td>Otto</td>
+                    <td>@mdo</td>
+                </tr>
+                <tr>
+                    <th scope="row">2</th>
+                    <td>Jacob</td>
+                    <td>Thornton</td>
+                    <td>@fat</td>
+                </tr>
+                <tr>
+                    <th scope="row">3</th>
+                    <td colspan="2">Larry the Bird</td>
+                    <td>@twitter</td>
+                </tr>
+            </tbody>
+        </table>
+
+    </div>
+
+    <script>
+        var table = document.getElementById('table');
+
+        /*
+        * This function will ensure that table is always empty before filling up the rows
+        */
+        function clearTable() {
+            for (let i = table.rows.length - 1; i >= 1; i--) {
+                table.deleteRow(i);
+            }
+        }
+
+        function populateTable() {
+            clearTable();
+
+            var params = new URLSearchParams(location.search);
+            for (const [key, value] of params.entries()) {
+
+                if (key == "name") {
+                    //CREATING A ROW
+                    let row = document.createElement("tr");
+
+                    //CREATING name row
+                    let tdvalue = document.createElement('td');
+                    tdvalue.textContent = "Name  " + value;
+                    tdvalue.setAttribute('colspan', '2');
+
+                    //FILLING UP THE ROW
+                    row.append(tdvalue);
+
+                    //ATTACHING THE ROW IN TABLE
+                    table.append(row);
+
+                    let headcol = document.createElement('tr');
+                    headcol.innerHTML = "<td>Subject</td> <td>Marks</marks>"
+                    table.append(headcol);
+                }
+                else {
+                    //CREATING A ROW
+                    let row = document.createElement("tr");
+
+                    //CREATING KEY VALUE PAIR FOR TABLE ENTRY
+                    let tdkey = document.createElement('td');
+                    tdkey.textContent = key;
+                    let tdvalue = document.createElement('td');
+                    tdvalue.textContent = value;
+
+
+                    //FILLING UP THE ROW
+                    row.append(tdkey);
+                    row.append(tdvalue);
+
+                    //ATTACHING THE ROW IN TABLE
+                    table.append(row);
+                }
+            }
+        }
+        populateTable();
+
+    </script>
+    <center>
+    <a class="btn btn-dark" href="Index.html" role="button">Back To Home</a>
+</center>
+</body>
+
+</html>

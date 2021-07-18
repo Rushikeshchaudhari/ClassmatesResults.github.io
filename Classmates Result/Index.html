@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <title>Document</title>
+</head>
+<body>
+  <center><div class="my-3"><h1>Student Marks</h1></div></center>
+  <div class="container my-5">
+    <div class="row row-cols-2">
+      <div class="col-7 border border-dark p-2">Nihal Jadhav</div>
+      <div class="col-4 border border-dark"><center>
+        <button class= "btn btn-success" onclick="view_marks('Nihal Jadhav',83, 89,70)">view</button>
+      </center></div>
+      <div class="col-7 border border-dark p-2">Mayuri chavan</div>
+      <div class="col-4 border border-dark"><center> 
+      <button class= "btn btn-success" onclick="view_marks('Mayuri chavan',89, 79,90)">view</button>
+      </center></div>
+      <div class="col-7 border border-dark p-2">Hariom jangid</div>
+      <div class="col-4 border border-dark"><center> 
+        <button class= "btn btn-success" onclick="view_marks('Hariom jangid',78, 80,89)">view</button>
+      </center></div>
+      <div class="col-7 border border-dark p-2">Rupesh Ahire</div>
+      <div class="col-4 border border-dark"><center>
+        <button class= "btn btn-success" onclick="view_marks('Rupesh Ahire',76, 89,77)">view</button>
+      </center></div>
+      <div class="col-7 border border-dark p-2">Bhushan chaudhari</div>
+      <div class="col-4 border border-dark"><center>
+        <button class= "btn btn-success" onclick="view_marks('Bhushan Chaudhari',90, 89,97)">view</button>
+      </center></div>
+      <div class="col-7 border border-dark p-2">Rushikesh Chaudhari </div>
+      <div class="col-4 border border-dark"><center>
+        <button class= "btn btn-success" onclick="view_marks('Rushikesh Chaudhari',91, 93,95)">view</button>
+      </center></div>
+      <div class="col-7 border border-dark p-2">Sachin Malthane</div>
+      <div class="col-4 border border-dark"><center>
+        <button class= "btn btn-success" onclick="view_marks('Sachin Malthane',78, 76,87)">view</button>
+      </center></div>
+      <div class="col-7 border border-dark p-2">Suraj jangid</div>
+      <div class="col-4 border border-dark"><center>
+        <button class= "btn btn-success" onclick="view_marks('Suraj jangid',76, 66,79)">view</button>
+      </center></div>
+      <div class="col-7 border border-dark p-2">Nidhi Deshmukh</div>
+      <div class="col-4 border border-dark"><center>
+        <button class= "btn btn-success" onclick="view_marks('Nidhi Deshmukh',87, 85,83)">view</button>
+      </center></div>
+      <div class="col-7 border border-dark p-2">Pranav Pandey</div>
+      <div class="col-4 border border-dark"><center>
+        <button class= "btn btn-success" onclick="view_marks('Pranav Pandey',70, 98,88)">view</button>
+      </center></div>
+    </div>
+  </div>
+  
+  <script>
+
+    function view_marks(name, os , wp,ds) {
+       
+        window.location.href = `Result.html?name=${name}&Operating System=${os}&Web Programming=${wp}&Data Science=${ds}&`;
+    }
+</script>
+</body>
+</html>
